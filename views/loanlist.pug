@@ -1,0 +1,30 @@
+extends baseTemplate
+
+block content
+  .main
+    .row
+      .col-md-6.col-md-offset-3
+        h3.table_heading
+          span List Of Loans
+        div
+          table.table-header 
+            thead
+              tr
+                th(scope='col') customerName
+                th(scope='col') phoneNumber
+                th(scope='col') address
+                th(scope='col') loanAmount
+                th(scope='col') interest
+                th(scope='col') loanTermYears
+                th(scope='col') description
+            tbody
+              each loan in loans 
+                tr.table-secondary
+                  td #{loan.customerName}
+                  td #{loan.phoneNumber}
+                  td #{loan.address}
+                  td #{loan.loanAmount}
+                  td #{loan.interest}
+                  td #{loan.loanTermYears}
+                  td #{loan.description}     
+

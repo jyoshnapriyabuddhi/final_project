@@ -1,0 +1,44 @@
+extends baseTemplate
+
+block content
+    .card-container
+      .card
+        .card__header
+          h3.heading-tertirary
+            span Create a new loan
+        .card__details
+          h4.card__sub-heading New Loan
+          p.card__text
+            | Please enter the following Details
+          .card__data
+            svg.card__icon
+              use(xlink:href='img/icons.svg#icon-map-pin')
+            form(method='POST' action='/loan')
+              div.form-group
+                label(for='customerName') Customer Name:
+                input#customerName.form-control(type='text',  name='customerName')
+              div.form-group
+                label(for='phoneNumber') Phone Number  :
+                input#phoneNumber.form-control(type='number',  name='phoneNumber')
+              div.form-group
+                label(for='email') email :
+                input#email.form-control(type='text',  name='email')
+              div.form-group
+                label(for='address') address:
+                input#address.form-control(type='text',  name='address')
+              div.form-group
+                label(for='loanAmount') loanAmount:
+                input#loanAmount.form-control(type='number' name='loanAmount')
+              div.form-group
+                label(for='interest') interest:
+                input#interest.form-control(type='number' name='interest')
+              div.form-group
+                label(for='loanTermYears') loanTermYears:
+                input#loanTermYears.form-control(type='number' name='loanTermYears')
+              div.form-group
+                label(for='loanType') loanType:
+                input#loanType.form-control(type='text' name='loanType')
+              div.form-group
+                label(for='description')  description:
+                input#description.form-control(type='text' name='description')
+              button.btn.btn-primary(type='submit') Create
